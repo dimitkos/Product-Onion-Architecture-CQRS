@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
 namespace Application.Commands
 {
-    class DeleteProduct
+    public class DeleteProduct : IRequest<int>
     {
+        public int ProductId { get; private set; }
+
+        public DeleteProduct(int productId)
+        {
+            ProductId = productId;
+        }
     }
 }
