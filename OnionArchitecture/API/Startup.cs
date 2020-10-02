@@ -27,6 +27,8 @@ namespace API
         {
             services.AddControllers();
 
+            //services.AddApplication();
+
             services.AddSwaggerGen(c =>
             {
                 c.IncludeXmlComments(string.Format(@"{0}\OnionArchitecture.xml", System.AppDomain.CurrentDomain.BaseDirectory));
