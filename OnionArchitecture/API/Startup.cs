@@ -24,6 +24,7 @@ namespace API
             services.AddControllers();
 
             services.AddApplication();
+            //must add nuget packages entityframeworkcore tools and design
             services.Infrastructure(Configuration);
 
             services.AddSwaggerGen(c =>

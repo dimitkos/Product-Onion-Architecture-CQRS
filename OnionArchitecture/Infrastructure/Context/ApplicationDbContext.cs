@@ -14,6 +14,12 @@ namespace Infrastructure.Context
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Product>().Property(p => p.Rate).HasColumnType("decimal(10, 2)");
+
+            base.OnModelCreating(modelBuilder);
+        }
 
         public async Task<int> SaveChanges()
         {
