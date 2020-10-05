@@ -22,7 +22,10 @@ namespace Application.Commands
             if (product == null)
                 return default;
 
-            _context.Products.Update(product);
+            product.Barcode = request.Barcode;
+            product.Name = request.Name;
+            product.Rate = request.Rate;
+            product.Description = request.Description;
             await _context.SaveChanges();
 
             return product.Id;
